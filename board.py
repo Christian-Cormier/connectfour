@@ -24,6 +24,21 @@ class Board:
                 if self.board[i][c] == self.board[i][c+1] == self.board[i][c+2] == self.board[i][c+3] != ' ':
                     print(True)
                     break
+        for c in range(self.width):
+            for r in range(self.height-3):
+                if self.board[r][c] == self.board[r+1][c] == self.board[r+2][c] == self.board[r+3][c] != ' ':
+                    print(True)
+                    break
+        for i in range(self.height-3):
+            for c in range(self.width-3):
+                if self.board[i][c] == self.board[i+1][c+1] == self.board[i+2][c+2] == self.board[i+3][c+3] != ' ':
+                    print(True)
+                    break
+        for i in range(self.height-3):
+            for c in range(self.width-3,self.height+1,-1):
+                if self.board[i][c] == self.board[i+1][c-1] == self.board[i+2][c-2] == self.board[i+3][c-3] != ' ':
+                    print(True)
+                    break
         
                 
     
@@ -46,13 +61,18 @@ class Board:
 
 
 def main():
-    b = Board(6,7)
+    b = Board(6,6)
     b.disp_board()
+    b.add_piece(1,'v')
+    b.add_piece(2,'t')
+    b.add_piece(2,'v')
+    b.add_piece(3,'t')
+    b.add_piece(3,'t')
     b.add_piece(3,'v')
-    b.add_piece(6,'v')
-    b.add_piece(2,'l')
+    b.add_piece(4,'t')
+    b.add_piece(4,'t')
+    b.add_piece(4,'t')
     b.add_piece(4,'v')
-    b.add_piece(5,'v')
     b.disp_board()
     b.check_win()
 
