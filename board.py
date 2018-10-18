@@ -33,9 +33,9 @@ class Board:
             for c in range(self.width-3):
                 if self.board[i][c] == self.board[i+1][c+1] == self.board[i+2][c+2] == self.board[i+3][c+3] != ' ':
                     return True
-        for i in range(self.height-4,self.height): #negative diagonal
+        for i in range(3,self.height): #negative diagonal
             for c in range(self.width-3):
-                if self.board[i][c] == self.board[i+1][c-1] == self.board[i+2][c-2] == self.board[i+3][c-3] != ' ':
+                if self.board[i][c] == self.board[i-1][c+1] == self.board[i-2][c+2] == self.board[i-3][c+3] != ' ':
                     return True
         return False
     
