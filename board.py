@@ -8,6 +8,7 @@ class Board:
         self.board = [[' ']*self.width for i in range(self.height)]
     
     def add_piece(self, col, piece):
+        '''adds a piece to the column given at the lowest empty space'''
         if col > self.width or col <= 0:
             raise ValueError("Invalid Column")
         for row in range(self.height-1,-1,-1):
@@ -18,9 +19,11 @@ class Board:
             raise ValueError("Column Full")
     
     def empty_board(self):
+        '''changes the all the values of board to an empty space'''
         self.board = [[' ']*self.width for i in range(self.height)]
     
     def check_win(self):
+        '''checks for 4 horizontal, vertical, and major and minor diagonals pieces in a row'''
         for i in range(self.height): #horizontal
             for c in range(self.width-4):
                 if self.board[i][c] == self.board[i][c+1] == self.board[i][c+2] == self.board[i][c+3] != ' ':
@@ -40,6 +43,7 @@ class Board:
         return False
     
     def is_full(self):
+        '''checks if the board is full'''
         count = 0
         for i in range(self.width):
             if self.board[0][i] != ' ':
@@ -49,6 +53,7 @@ class Board:
         return False
     
     def disp_board(self):
+        ''' displays the board'''
         colnum = ""
         print("--" * self.width)
         for row in self.board:
