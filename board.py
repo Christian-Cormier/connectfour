@@ -33,9 +33,9 @@ class Board:
             for c in range(self.width-3):
                 if self.board[i][c] == self.board[i+1][c+1] == self.board[i+2][c+2] == self.board[i+3][c+3] != ' ':
                     return True
-        for i in range(self.height-4,self.height): #negative diagonal
+        for i in range(3,self.height): #negative diagonal
             for c in range(self.width-3):
-                if self.board[i][c] == self.board[i+1][c-1] == self.board[i+2][c-2] == self.board[i+3][c-3] != ' ':
+                if self.board[i][c] == self.board[i-1][c+1] == self.board[i-2][c+2] == self.board[i-3][c+3] != ' ':
                     return True
         return False
     
@@ -63,26 +63,26 @@ class Board:
 
 
 
-def main():
-    b = Board(6,6)
-    b.disp_board()
-    b.add_piece(4,'v')
-    b.add_piece(3,'t')
-    b.add_piece(3,'v')
-    b.add_piece(2,'t')
-    b.add_piece(2,'t')
-    b.add_piece(2,'v')
-    b.add_piece(1,'t')
-    b.add_piece(1,'t')
-    b.add_piece(1,'t')
-    b.add_piece(1,'v')
-    b.disp_board()
-    b.check_win()
-    
-
-
-if __name__ == "__main__":
-    # test code
-    main()
+#def main():
+#    b = Board(6,6)
+#    b.disp_board()
+#    b.add_piece(4,'v')
+#    b.add_piece(3,'t')
+#    b.add_piece(3,'v')
+#    b.add_piece(2,'t')
+#    b.add_piece(2,'t')
+#    b.add_piece(2,'v')
+#    b.add_piece(1,'t')
+#    b.add_piece(1,'t')
+#    b.add_piece(1,'t')
+#    b.add_piece(1,'v')
+#    b.disp_board()
+#    b.check_win()
+#    
+#
+#
+#if __name__ == "__main__":
+#    # test code
+#    main()
 
         
