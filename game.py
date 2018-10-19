@@ -7,15 +7,6 @@ class Game:
         self.players = []
         self.board = board
 
-    def winner(self):
-        if check_win():
-            print("You Win!")
-        
-            
-            
-    def check_full(self):
-        if is_full():
-            print("You Tie!")
         
     def play_game(self):
         print("Welcome To Connect 4!")
@@ -25,20 +16,25 @@ class Game:
         print('Player 2 what is your name')
         self.players.append(Player('$'))
         while True:
-            try:
+            print(self.turn)
+#            try:
+            self.board.disp_board()
+            self.choice = self.players[self.turn].get_choice(self.board)
+            self.board.add_piece(self.choice,self.players[self.turn].piece)
+            if self.board.check_win():
                 self.board.disp_board()
-                self.choice = Player.get_choice(self,self.board)
-                self.board.add_piece(self.choice,self.players[self.turn].piece)
-                if self.board.detect_win():
-                    return
-                if self.board.is_full():
-                    return
-            except Exception as e:
-                pass
+                print('You Win!')
+                return
+            if self.board.is_full():
+                self.board.disp_board()
+                print('You Tie!')
+                return
+            self.turn = (self.turn + 1) % 2 
+#            except Exception as e:
+#                print(e)
+                
 if __name__ == "__main__":
     g = Game(Board(7,7))
     g.play_game()
-    
-#while True:
-#    board.addpiece()
+
     

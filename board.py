@@ -68,26 +68,26 @@ class Board:
 
 
 
-def main():
-    b = Board(6,6)
-    b.disp_board()
-    b.add_piece(4,'v')
-    b.add_piece(3,'t')
-    b.add_piece(3,'v')
-    b.add_piece(2,'t')
-    b.add_piece(2,'t')
-    b.add_piece(2,'v')
-    b.add_piece(1,'t')
-    b.add_piece(1,'t')
-    b.add_piece(1,'t')
-    b.add_piece(1,'v')
-    b.disp_board()
-    b.check_win()
-    
-
-
-if __name__ == "__main__":
-    # test code
-    main()
+#def main():
+#    b = Board(6,6)
+#    b.disp_board()
+#    b.add_piece(4,'v')
+#    b.add_piece(3,'t')
+#    b.add_piece(3,'v')
+#    b.add_piece(2,'t')
+#    b.add_piece(2,'t')
+#    b.add_piece(2,'v')
+#    b.add_piece(1,'t')
+#    b.add_piece(1,'t')
+#    b.add_piece(1,'t')
+#    b.add_piece(1,'v')
+#    b.disp_board()
+#    b.check_win()
+#    
+#
+#
+#if __name__ == "__main__":
+#    # test code
+#    main()
 
         
