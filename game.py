@@ -26,7 +26,7 @@ class Game:
                 self.board.add_piece(self.choice,self.players[self.turn].piece)
                 if self.board.check_win():
                     self.board.disp_board()
-                    print('You Win!')
+                    print(f'{self.players[self.turn].name} You Win!')
                     return
                 if self.board.is_full():
                     self.board.disp_board()
