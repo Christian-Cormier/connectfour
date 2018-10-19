@@ -6,7 +6,7 @@ class Player:
         '''
         gets the users name using user input
         '''
-        return input("what is your name-- ")
+        return input("-- ")
     def get_choice(self,board):
         '''
         gets the column number from the player by user input
