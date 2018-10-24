@@ -11,7 +11,7 @@ class Player:
         '''
         gets the column number from the player by user input
         '''
-        choice = int(input(f'now {self.name} pick a column-- '))
+        choice = int(input(f'now {self.name} pick a column-- ')) # input validation
         return(int(choice))
 
         

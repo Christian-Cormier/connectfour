@@ -19,7 +19,7 @@ class Game:
         print('Player 2 what is your name')
         self.players.append(Player('X'))
         while True:
-             try:
+             try: # while loop
                 self.board.disp_board()
                 self.choice = self.players[self.turn].get_choice(self.board)
            
